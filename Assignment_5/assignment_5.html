@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <article>
+    <h2>Tell Us What You Think About the Game!</h2>
+    <form id="feedbackForm">
+      <p>
+        <label for="username">Your Name:</label><br />
+        <input type="text" id="username" name="username" required />
+      </p>
+
+      <p>
+        <label for="feedback">Your Feedback:</label><br />
+        <textarea id="feedback" name="feedback" rows="4" cols="40" required></textarea>
+      </p>
+
+      <p>
+        <input type="submit" value="Submit Feedback" />
+      </p>
+    </form>
+
+    <!-- Output area to display submitted data -->
+    <div id="output"></div>
+  </article>
+
+  <aside>
+    <h3>How Web Storage Helps in Games</h3>
+    <p>
+      <strong>localStorage</strong> and <strong>sessionStorage</strong> are used in games to save player data directly in the browser.
+    </p>
+    <p>
+      - <strong>localStorage</strong> stores game progress, high scores, or settings like sound and difficulty level. The data stays saved even after you close the game or the browser.
+    </p>
+    <p>
+      - <strong>sessionStorage</strong> is used to keep temporary data like your current level or active session. When the game tab is closed, this data is cleared.
+    </p>
+    <p>
+      These features make browser-based games more fun and smooth by remembering your progress and choices without needing an account.
+    </p>
+  </aside>
+
+  <script>
+    // JavaScript to handle form and display output
+    const form = document.getElementById('feedbackForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting normally
+
+      const name = document.getElementById('username').value;
+      const feedback = document.getElementById('feedback').value;
+
+      output.innerHTML = `
+        <h3>Thank you for your feedback!</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Feedback:</strong> ${feedback}</p>
+      `;
+
+      form.reset(); // Optional: clear the form
+    });
+  </script>
+
+</body>
+</html>
