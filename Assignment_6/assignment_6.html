@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <style>
+    details {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Student Dashboard</h1>
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">Subjects</a> |
+      <a href="#">Attendance</a> |
+      <a href="#">Feedback</a>
+    </nav>
+  </header>
+
+  <aside>
+    <h2>Student Info</h2>
+    <p><strong>Name:</strong> Akshay S Atreya</p>
+    <p><strong>Reg No:</strong> 1MS24SCN01</p>
+    <p><strong>Semester:</strong> 2nd</p>
+    <figure>
+      <img src="aks2.jpg" alt="Akshay S Atreya" width="150">
+      <figcaption>Akshay S Atreya - Computer Science</figcaption>
+    </figure>
+  </aside>
+
+  <section>
+    <h2>Academic Performance</h2>
+
+    <article>
+      <h3>Advanced Engineering Mathematics</h3>
+      <p>Test Date: <time datetime="2025-04-12">April 12, 2025</time></p>
+      <p>Assignment Completion: 
+        <progress value="4" max="5"></progress>
+      </p>
+      <p>Test Score: 
+        <meter value="82" min="0" max="100" low="40" high="90" optimum="95"></meter>
+      </p>
+      <button class="toggle-comments">Show Comments</button>
+      <details>
+        <summary>Teacher Feedback</summary>
+        <p>Good understanding of concepts. Needs to work on time management.</p>
+      </details>
+    </article>
+
+    <article>
+      <h3>Advanced Computer Networks</h3>
+      <p>Test Date: <time datetime="2025-04-14">April 14, 2025</time></p>
+      <p>Assignment Completion: 
+        <progress value="3" max="5"></progress>
+      </p>
+      <p>Test Score: 
+        <meter value="70" min="0" max="100" low="40" high="90" optimum="95"></meter>
+      </p>
+      <button class="toggle-comments">Show Comments</button>
+      <details>
+        <summary>Teacher Feedback</summary>
+        <p>Shows curiosity but needs to improve accuracy in answers.</p>
+      </details>
+    </article>
+  </section>
+
+  <section>
+    <h2>Overall Performance</h2>
+    <p>Average Score: 
+      <meter value="76" min="0" max="100" low="40" high="90" optimum="95"></meter>
+    </p>
+    <p>Total Assignment Completion: 
+      <progress value="7" max="10"></progress>
+    </p>
+  </section>
+
+  <footer>
+    <p>Contact: exam@msrit.edu</p>
+    <p>&copy; <time datetime="2025">2025</time> M S Ramaiah Institute of Technology</p>
+  </footer>
+
+  <script>
+   
+    const buttons = document.querySelectorAll('.toggle-comments');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const details = button.nextElementSibling;
+        if (details && details.tagName.toLowerCase() === 'details') {
+          details.open = !details.open;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
